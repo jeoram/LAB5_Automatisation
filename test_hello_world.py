@@ -22,4 +22,5 @@ def test_greeting_returns_html_content_type():
 def test_greeting_contains_expected_html():
     client = app.test_client()
     response = client.get("/greeting")
-    assert b"Hello, World!" in response.data
+    assert b"Welcome to CI/CD 101 using GitHub Actions!" in response.data
+
