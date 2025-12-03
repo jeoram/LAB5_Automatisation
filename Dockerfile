@@ -4,8 +4,10 @@ RUN mkdir /opt/hello_world/
 WORKDIR /opt/hello_world/
 
 COPY requirements.txt .
-COPY COPY . /opt/hello_world/
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . /opt/hello_world/
 
 EXPOSE 80
 
-CMD [ "./hello_world" ]
+CMD ["python", "hello_world.py"]
