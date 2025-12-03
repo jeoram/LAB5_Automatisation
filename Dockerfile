@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /opt/hello_world/
 
-EXPOSE 80
+EXPOSE 4049
 
-CMD [ "/hello_world.py"]
+CMD [ "python", "hello_world.py"]
