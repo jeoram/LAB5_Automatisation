@@ -2,6 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 def generate_html(message):
     html = """
         <html>
@@ -15,14 +16,20 @@ def generate_html(message):
         </html>""".format(message)
     return html
 
+
 def greet():
-    greeting = 'Welcome to CI/CD 101 using GitHub Actions!'
-    return greeting
+    return "Hello World from Flask CI/CD Lab!"
+
+
+@app.route('/')
+def hello():
+    return generate_html(greet())
+
 
 @app.route('/greeting')
-def hello_world():
-    html = generate_html(greet())
-    return html
+def greeting():
+    return greet()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4049)
