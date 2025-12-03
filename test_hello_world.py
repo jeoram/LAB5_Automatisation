@@ -1,5 +1,6 @@
 from hello_world import app
 
+
 def test_root_path_returns_404():
     client = app.test_client()
     response = client.get("/")
@@ -23,4 +24,3 @@ def test_greeting_contains_expected_html():
     client = app.test_client()
     response = client.get("/greeting")
     assert b"Welcome to CI/CD 101 using GitHub Actions!" in response.data
-
