@@ -10,4 +10,4 @@ COPY . /opt/hello_world/
 
 EXPOSE 80
 
-CMD ["python", "hello_world.py"]
+CMD [ "/hello_world.py"]
